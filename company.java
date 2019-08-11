@@ -1,9 +1,13 @@
+import java.io.*; 
+import java.util.*;
+
 public class company{
     final private String name;
     final private int no_eligible_courses;
     final private int students_required;
     final private String[] eligible_courses; 
     private boolean application_status;
+    private ArrayList<marksCompany> Marks;
 
     public company(String name, int no_eligible_courses, int students_required, String[] eligible_courses)
     {
@@ -44,5 +48,14 @@ public class company{
     public String getName()
     {
         return(this.name);
+    }
+    public void add_marks(int roll_no, int marks)
+    {
+        marksCompany m = new marksCompany(roll_no, marks);
+        Marks.add(m);
+    }
+    public ArrayList getMarks()
+    {
+        return(this.Marks);
     }
 }

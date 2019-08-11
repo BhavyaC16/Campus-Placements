@@ -51,7 +51,16 @@ public class placementOffice{
 			if(this.Students.get(i).placed()==false)
 			{
 				int score = 0;
-
+				for(int j = 0;j<no_eligible_courses;j++)
+				{
+					if(courses[j].equals(Students.get(i).getBranch()))
+					{
+						System.out.print("Enter marks for Roll Number ");
+						System.out.println(Students.get(i).rollNumber());
+						score = sc.nextInt();
+						Students.get(i).add_marks(name,score);
+					}
+				}
 
 			}
 		}
@@ -93,6 +102,7 @@ public class placementOffice{
 	public void displayCompany()
 	{
 		Scanner sc = new Scanner(System.in);
+		String company_name = sc.nextLine();
 		for(int i = 0;i<this.Companies.size();i++)
 		{
 			System.out.print(Companies.get(i));

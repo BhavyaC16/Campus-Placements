@@ -3,7 +3,7 @@ public class marksStudent
 	private String company;
 	private int marks;
 
-	public void marksStudent(String company, int marks)
+	public marksStudent(String company, int marks)
 	{
 		this.company = company;
 		this.marks = marks;

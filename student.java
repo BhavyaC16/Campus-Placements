@@ -1,3 +1,6 @@
+import java.io.*; 
+import java.util.*;
+
 public class student{
 	final private int roll_no;
 	final private float cgpa;
@@ -6,6 +9,7 @@ public class student{
 	private static int count=1;
 	private boolean placed;
 	private String company_name;
+	private ArrayList<marksStudent> Marks;
 
 	public student(float cgpa, String branch)
 	{
@@ -39,5 +43,18 @@ public class student{
 	public int rollNumber()
 	{
 		return(this.roll_no);
+	}
+	public String getBranch()
+	{
+		return(this.branch);
+	}
+	public void add_marks(String company, int marks)
+	{
+		marksStudent m = new marksStudent(company, marks);
+		Marks.add(m);
+	}
+	public ArrayList getMarks()
+	{
+		return(this.Marks);
 	}
 }
