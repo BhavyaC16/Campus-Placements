@@ -63,6 +63,10 @@ public class company{
     {
         return(this.Marks);
     }
+    public void setStatus()
+    {
+        this.application_status = false;
+    }
 }
 /*
 for(int i = 0;i<this.Marks.size();i++)

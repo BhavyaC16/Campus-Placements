@@ -53,6 +53,10 @@ public class student{
 	{
 		return(this.cgpa);
 	}
+	public void setPlaced()
+	{
+		this.placed = true;
+	}
 	public void add_marks(String company, int marks)
 	{
 		marksStudent m = new marksStudent(company, marks);

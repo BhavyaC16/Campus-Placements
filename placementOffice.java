@@ -106,7 +106,6 @@ public class placementOffice{
 		String company_name = sc.nextLine();
 		for(int i = 0;i<this.Companies.size();i++)
 		{
-			System.out.print(Companies.get(i));
 			if((this.Companies.get(i).getName().equals(company_name)))
 			{
 				Companies.get(i).display_company();
@@ -135,11 +134,22 @@ public class placementOffice{
 			{
 				int req = Companies.get(i).getReq();
 				ArrayList<marksCompany> Marks = Companies.get(i).getMarks();
-				Collections.sort(Marks);
-				for(int k = 0; k<Marks.size();k++)
+				Collections.sort(Marks, new ObjectComparator());
+				for(int k = 0; k<Marks.size() && k<req;k++)
 				{
-					System.out.println(Marks.get_marks());
-				}			
+					int roll_number = Marks.get(k).getRollNo();
+
+					for(int j = 0;j<this.Students.size();j++)
+					{
+						if(this.Students.get(i).rollNumber()==roll_number)
+						{
+							Students.get(i).setPlaced();
+							students_placed++;
+							System.out.println(roll_number);
+						}
+					}
+				}
+				Companies.get(i).setStatus();
 			}
 		}
 
