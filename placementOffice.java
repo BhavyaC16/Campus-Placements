@@ -37,7 +37,6 @@ public class placementOffice{
 		String[] courses = new String[no_eligible_courses];
 		for(int k = 0;k<no_eligible_courses;k++)
 		{
-			System.out.println(k);
 			String s = sc.next();
 			courses[k] = s;
 		}
@@ -46,6 +45,17 @@ public class placementOffice{
 
 		company c = new company(name, no_eligible_courses, required_students, courses);
 		c.display_company();
+		this.Companies.add(c);
+		for(int i = 0;i<this.Students.size();i++)
+		{
+			if(this.Students.get(i).placed()==false)
+			{
+				int score = 0;
+
+
+			}
+		}
+
 	}
 	public void removeStudents()
 	{
@@ -83,12 +93,11 @@ public class placementOffice{
 	public void displayCompany()
 	{
 		Scanner sc = new Scanner(System.in);
-		String company_name = sc.nextLine();
 		for(int i = 0;i<this.Companies.size();i++)
 		{
-			if((this.Companies.get(i).getName()==company_name)) //problem in string comparison
+			System.out.print(Companies.get(i));
+			if((this.Companies.get(i).getName().equals(company_name)))
 			{
-				System.out.print("== works");
 				Companies.get(i).display_company();
 			}
 		}
@@ -104,6 +113,15 @@ public class placementOffice{
 				Students.get(i).display_student();
 			}
 		}
+	}
+	public void selectStudents()
+	{
+
+	}
+
+	public void studentReport()
+	{
+
 	}
 
 
@@ -132,13 +150,13 @@ public class placementOffice{
 						break;
 				case 5:	pmo.openCompanies();
 						break;
-				case 6:
+				case 6:	pmo.selectStudents();
 						break;
 				case 7:	pmo.displayCompany();
 						break;
 				case 8:	pmo.displayStudent();
 						break;
-				case 9:
+				case 9:	pmo.studentReport();
 						break;
 				default:System.out.println("Enter valid instruction");
 						break;
