@@ -59,7 +59,7 @@ public class placementOffice{
 						System.out.println(rollNo);
 						score = sc.nextInt();
 						Students.get(i).add_marks(name,score);
-						c.add_marks(rollNo,score);
+						c.add_marks(rollNo,score,Students.get(i).getcgpa());
 					}
 				}
 
@@ -127,6 +127,21 @@ public class placementOffice{
 	}
 	public void selectStudents()
 	{
+		Scanner sc = new Scanner(System.in);
+		String company = sc.nextLine();
+		for(int i = 0;i<this.Companies.size();i++)
+		{
+			if(this.Companies.get(i).getName().equals(company))
+			{
+				int req = Companies.get(i).getReq();
+				ArrayList<marksCompany> Marks = Companies.get(i).getMarks();
+				Collections.sort(Marks);
+				for(int k = 0; k<Marks.size();k++)
+				{
+					System.out.println(Marks.get_marks());
+				}			
+			}
+		}
 
 	}
 

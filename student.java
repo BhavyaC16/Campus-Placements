@@ -49,6 +49,10 @@ public class student{
 	{
 		return(this.branch);
 	}
+	public float getcgpa()
+	{
+		return(this.cgpa);
+	}
 	public void add_marks(String company, int marks)
 	{
 		marksStudent m = new marksStudent(company, marks);

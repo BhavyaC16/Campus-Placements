@@ -50,9 +50,13 @@ public class company{
     {
         return(this.name);
     }
-    public void add_marks(int roll_no, int marks)
+    public int getReq()
     {
-        marksCompany m = new marksCompany(roll_no, marks);
+        return(this.students_required);
+    }
+    public void add_marks(int roll_no, int marks, float cgpa)
+    {
+        marksCompany m = new marksCompany(roll_no, marks, cgpa);
         Marks.add(m);
     }
     public ArrayList getMarks()
@@ -60,3 +64,11 @@ public class company{
         return(this.Marks);
     }
 }
+/*
+for(int i = 0;i<this.Marks.size();i++)
+        {
+            System.out.print(Marks.get(i).getRollNo()+" : ");
+            System.out.println(Marks.get(i).get_marks());
+            System.out.println(Marks.get(i).get_cgpa())
+        }
+*/
