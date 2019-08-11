@@ -28,6 +28,7 @@ public class company{
         }
         System.out.print("Number of required students: ");
         System.out.println(this.students_required);
+        System.out.print("Application Status: ")
         if(this.application_status==true)
         {
             System.out.println("OPEN");
@@ -35,11 +36,5 @@ public class company{
         else{
             System.out.println("CLOSED");
         }
-    }
-    public static void main(String[] args)
-    {
-        String[] course = new String[]{"CSE","CSD"};
-        company c  = new company("ABC", 2, 5, course);
-        c.display_company();
     }
 }
