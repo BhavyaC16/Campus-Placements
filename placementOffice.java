@@ -35,9 +35,10 @@ public class placementOffice{
 		System.out.print("Number of Eligible Courses = ");
 		int no_eligible_courses = sc.nextInt();
 		String[] courses = new String[no_eligible_courses];
-		for(int k = 0;k<no_eligible_courses;k++) //Taking 1 input less.. solve
+		for(int k = 0;k<no_eligible_courses;k++)
 		{
-			String s = sc.nextLine();
+			System.out.println(k);
+			String s = sc.next();
 			courses[k] = s;
 		}
 		System.out.print("Number of Required Students = ");
@@ -45,8 +46,66 @@ public class placementOffice{
 
 		company c = new company(name, no_eligible_courses, required_students, courses);
 		c.display_company();
-
 	}
+	public void removeStudents()
+	{
+		for(int i = 0;i<this.Students.size();i++)
+		{
+			if(this.Students.get(i).placed()==true)
+			{
+				this.removedStudents.add(Students.get(i));
+				System.out.println(Students.get(i).rollNumber());
+			}
+		}
+	}
+	public void removeCompanies()
+	{
+		for(int i = 0;i<this.Companies.size();i++)
+		{
+			if(this.Companies.get(i).status()==false)
+			{
+				this.removedCompanies.add(Companies.get(i));
+				System.out.println(Companies.get(i).getName());
+			}
+		}
+	}
+	public void openCompanies()
+	{
+		for(int i = 0;i<this.Companies.size();i++)
+		{
+			if(this.Companies.get(i).status()==true)
+			{
+				System.out.println(Companies.get(i).getName());
+			}
+		}
+	}
+
+	public void displayCompany()
+	{
+		Scanner sc = new Scanner(System.in);
+		String company_name = sc.nextLine();
+		for(int i = 0;i<this.Companies.size();i++)
+		{
+			if((this.Companies.get(i).getName()==company_name)) //problem in string comparison
+			{
+				System.out.print("== works");
+				Companies.get(i).display_company();
+			}
+		}
+	}
+	public void displayStudent()
+	{
+		Scanner sc = new Scanner(System.in);
+		int roll_number = sc.nextInt();
+		for(int i = 0;i<this.Students.size();i++)
+		{
+			if(this.Students.get(i).rollNumber()==roll_number)
+			{
+				Students.get(i).display_student();
+			}
+		}
+	}
+
 
 	public static void main(String args[]){
 		Scanner sc = new Scanner(System.in);
@@ -65,23 +124,23 @@ public class placementOffice{
 			switch(ch){
 				case 1:	pmo.add_company();
 						break;
-				case 2:
+				case 2:	pmo.removeStudents();
 						break;
-				case 3:
+				case 3:	pmo.removeCompanies();
 						break;
-				case 4:
+				case 4:	System.out.println(pmo.get_no_unplaced_students());
 						break;
-				case 5:
+				case 5:	pmo.openCompanies();
 						break;
 				case 6:
 						break;
-				case 7:
+				case 7:	pmo.displayCompany();
 						break;
-				case 8:
+				case 8:	pmo.displayStudent();
 						break;
 				case 9:
 						break;
-				default:
+				default:System.out.println("Enter valid instruction");
 						break;
 			}
 		}	
