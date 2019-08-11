@@ -9,7 +9,7 @@ public class student{
 	private static int count=1;
 	private boolean placed;
 	private String company_name;
-	private ArrayList<marksStudent> Marks;
+	private static ArrayList<marksStudent> Marks;
 
 	public student(float cgpa, String branch)
 	{
@@ -18,6 +18,7 @@ public class student{
 		this.placed = false;
 		this.cgpa = cgpa;
 		this.branch = branch;
+		this.Marks = new ArrayList<marksStudent>(100);
 	}
 	public void display_student()
 	{

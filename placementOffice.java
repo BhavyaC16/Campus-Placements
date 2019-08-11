@@ -45,7 +45,6 @@ public class placementOffice{
 
 		company c = new company(name, no_eligible_courses, required_students, courses);
 		c.display_company();
-		this.Companies.add(c);
 		for(int i = 0;i<this.Students.size();i++)
 		{
 			if(this.Students.get(i).placed()==false)
@@ -56,15 +55,17 @@ public class placementOffice{
 					if(courses[j].equals(Students.get(i).getBranch()))
 					{
 						System.out.print("Enter marks for Roll Number ");
-						System.out.println(Students.get(i).rollNumber());
+						int rollNo = Students.get(i).rollNumber();
+						System.out.println(rollNo);
 						score = sc.nextInt();
 						Students.get(i).add_marks(name,score);
+						c.add_marks(rollNo,score);
 					}
 				}
 
 			}
 		}
-
+		this.Companies.add(c);
 	}
 	public void removeStudents()
 	{
@@ -142,7 +143,7 @@ public class placementOffice{
 		for(int i=0;i<N;i++)
 		{
 			float cgpa = sc.nextFloat();
-			String branch = sc.nextLine();
+			String branch = sc.next();
 			student s = new student(cgpa, branch);
 			Students.add(s);
 		}

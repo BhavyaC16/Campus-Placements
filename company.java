@@ -7,7 +7,7 @@ public class company{
     final private int students_required;
     final private String[] eligible_courses; 
     private boolean application_status;
-    private ArrayList<marksCompany> Marks;
+    private static ArrayList<marksCompany> Marks;
 
     public company(String name, int no_eligible_courses, int students_required, String[] eligible_courses)
     {
@@ -15,6 +15,7 @@ public class company{
         this.students_required = students_required;
         this.no_eligible_courses = no_eligible_courses;
         this.eligible_courses = new String[no_eligible_courses];
+        this.Marks = new ArrayList<marksCompany>(100);
         for(int i = 0;i<no_eligible_courses;i++)
         {
             this.eligible_courses[i] = eligible_courses[i]; 
