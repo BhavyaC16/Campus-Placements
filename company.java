@@ -28,7 +28,7 @@ public class company{
         }
         System.out.print("Number of required students: ");
         System.out.println(this.students_required);
-        System.out.print("Application Status: ")
+        System.out.print("Application Status: ");
         if(this.application_status==true)
         {
             System.out.println("OPEN");
@@ -36,5 +36,13 @@ public class company{
         else{
             System.out.println("CLOSED");
         }
+    }
+    public boolean status()
+    {
+        return(this.application_status);
+    }
+    public String getName()
+    {
+        return(this.name);
     }
 }
