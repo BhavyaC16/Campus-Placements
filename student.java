@@ -32,4 +32,12 @@ public class student{
 			System.out.println("Company: "+this.company_name);
 		}
 	}
+	public boolean placed()
+	{
+		return(this.placed);
+	}
+	public int rollNumber()
+	{
+		return(this.roll_no);
+	}
 }
