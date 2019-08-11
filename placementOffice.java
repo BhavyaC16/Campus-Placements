@@ -135,15 +135,15 @@ public class placementOffice{
 				int req = Companies.get(i).getReq();
 				ArrayList<marksCompany> Marks = Companies.get(i).getMarks();
 				Collections.sort(Marks, new ObjectComparator());
-				for(int k = 0; k<Marks.size() && k<req;k++)
+				for(int k = 0;k<Marks.size() && k<req;k++)
 				{
 					int roll_number = Marks.get(k).getRollNo();
 
 					for(int j = 0;j<this.Students.size();j++)
 					{
-						if(this.Students.get(i).rollNumber()==roll_number)
+						if(this.Students.get(j).rollNumber()==roll_number)
 						{
-							Students.get(i).setPlaced();
+							Students.get(j).setPlaced();
 							students_placed++;
 							System.out.println(roll_number);
 						}

@@ -9,7 +9,7 @@ public class student{
 	private static int count=1;
 	private boolean placed;
 	private String company_name;
-	private static ArrayList<marksStudent> Marks;
+	private ArrayList<marksStudent> Marks;
 
 	public student(float cgpa, String branch)
 	{
@@ -60,14 +60,14 @@ public class student{
 	public void add_marks(String company, int marks)
 	{
 		marksStudent m = new marksStudent(company, marks);
-		Marks.add(m);
+		this.Marks.add(m);
 	}
 	public void getMarks()
 	{
 		for(int i = 0;i<this.Marks.size();i++)
 		{
-			System.out.print(Marks.get(i).getCompany()+" : ");
-			System.out.println(Marks.get(i).get_marks());
+			System.out.print(this.Marks.get(i).getCompany()+" : ");
+			System.out.println(this.Marks.get(i).get_marks());
 		}
 	}
 }
