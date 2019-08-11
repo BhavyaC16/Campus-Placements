@@ -12,7 +12,7 @@ public class marksCompany
 	{
 		return(this.roll_no);
 	}
-	public int getMarks()
+	public int get_marks()
 	{
 		return(this.marks);
 	}

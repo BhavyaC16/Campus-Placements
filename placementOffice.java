@@ -132,6 +132,15 @@ public class placementOffice{
 
 	public void studentReport()
 	{
+		Scanner sc = new Scanner(System.in);
+		int rollNo = sc.nextInt();
+		for(int i = 0;i<this.Students.size();i++)
+		{
+			if(this.Students.get(i).rollNumber()==rollNo)
+			{
+				Students.get(i).getMarks();
+			}
+		}
 
 	}
 

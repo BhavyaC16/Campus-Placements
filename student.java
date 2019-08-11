@@ -54,8 +54,12 @@ public class student{
 		marksStudent m = new marksStudent(company, marks);
 		Marks.add(m);
 	}
-	public ArrayList getMarks()
+	public void getMarks()
 	{
-		return(this.Marks);
+		for(int i = 0;i<this.Marks.size();i++)
+		{
+			System.out.print(Marks.get(i).getCompany()+" : ");
+			System.out.println(Marks.get(i).get_marks());
+		}
 	}
 }

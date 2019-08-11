@@ -12,7 +12,7 @@ public class marksStudent
 	{
 		return(this.company);
 	}
-	public int getMarks()
+	public int get_marks()
 	{
 		return(this.marks);
 	}
